@@ -1,0 +1,150 @@
+{
+  "code": "0",
+  "data": {
+    "msg": "操作成功！",
+    "success": true	,
+    "result": [{
+      "filmId": 0,
+      "name": "所有用户",
+      "num": "123456",
+      "attr": "对象",
+      "person": "张三",
+      "createTime": "2016-12-20 15:00",
+      "states": "待审核",
+      "hdstates": "未上架"
+    },{
+      "filmId": 1,
+      "name": "所有用户",
+      "num": "123456",
+      "attr": "对象",
+      "person": "张三",
+      "createTime": "2016-12-20 15:00",
+      "states": "审核成功",
+      "hdstates": "已上架"
+    },{
+      "filmId": 2,
+      "name": "所有用户",
+      "num": "123456",
+      "attr": "对象",
+      "person": "张三",
+      "createTime": "2016-12-20 15:00",
+      "states": "审核驳回",
+      "hdstates": "已上架"
+    },{
+      "filmId": 3,
+      "name": "所有用户",
+      "num": "123456",
+      "attr": "对象",
+      "person": "张三",
+      "createTime": "2016-12-20 15:00",
+      "states": "待审核",
+      "hdstates": "未上架"
+    },{
+      "filmId": 4,
+      "name": "所有用户",
+      "num": "123456",
+      "attr": "对象",
+      "person": "张三",
+      "createTime": "2016-12-20 15:00",
+      "states": "待审核",
+      "hdstates": "已上架"
+    },{
+      "filmId": 5,
+      "name": "所有用户",
+      "num": "123456",
+      "attr": "对象",
+      "person": "张三",
+      "createTime": "2016-12-20 15:00",
+      "states": "待审核",
+      "hdstates": "已上架"
+    },{
+      "filmId": 6,
+      "name": "所有用户",
+      "num": "123456",
+      "attr": "对象",
+      "person": "张三",
+      "createTime": "2016-12-20 15:00",
+      "states": "待审核",
+      "hdstates": "未上架"
+    },{
+      "filmId": 7,
+      "name": "所有用户",
+      "num": "123456",
+      "attr": "对象",
+      "person": "张三",
+      "createTime": "2016-12-20 15:00",
+      "states": "待审核",
+      "hdstates": "已上架"
+    },{
+      "filmId": 7,
+      "name": "所有用户",
+      "num": "123456",
+      "attr": "对象",
+      "person": "张三",
+      "createTime": "2016-12-20 15:00",
+      "states": "待审核",
+      "hdstates": "已上架"
+    },{
+      "filmId": 7,
+      "name": "所有用户",
+      "num": "123456",
+      "attr": "对象",
+      "person": "张三",
+      "createTime": "2016-12-20 15:00",
+      "states": "待审核",
+      "hdstates": "已上架"
+    },{
+      "filmId": 7,
+      "name": "所有用户",
+      "num": "123456",
+      "attr": "对象",
+      "person": "张三",
+      "createTime": "2016-12-20 15:00",
+      "states": "待审核",
+      "hdstates": "已上架"
+    },{
+      "filmId": 7,
+      "name": "所有用户",
+      "num": "123456",
+      "attr": "对象",
+      "person": "张三",
+      "createTime": "2016-12-20 15:00",
+      "states": "待审核",
+      "hdstates": "已上架"
+    },{
+      "filmId": 7,
+      "name": "所有用户",
+      "num": "123456",
+      "attr": "对象",
+      "person": "张三",
+      "createTime": "2016-12-20 15:00",
+      "states": "待审核",
+      "hdstates": "已上架"
+    },{
+      "filmId": 7,
+      "name": "所有用户",
+      "num": "123456",
+      "attr": "对象",
+      "person": "张三",
+      "createTime": "2016-12-20 15:00",
+      "states": "待审核",
+      "hdstates": "已上架"
+    },{
+      "filmId": 7,
+      "name": "所有用户",
+      "num": "123456",
+      "attr": "对象",
+      "person": "张三",
+      "createTime": "2016-12-20 15:00",
+      "states": "待审核",
+      "hdstates": "已上架"
+    }]
+  },
+  "imgUrl":"/src/assets/images/img.gif",
+  "userInfo": {
+    "loginName": "张三",
+    "userName": "张三",
+    "ip": "127.0.0.1",
+    "loginTime":"2017-01-12  10:40:08"
+  }
+}

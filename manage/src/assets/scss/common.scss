@@ -1,0 +1,108 @@
+.toolbar{
+  background: #F8FBF9;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+.toolbar .el-input__inner {
+  width: 160px;
+}
+.toolbar .el-form-item{
+  margin-bottom: 0;
+  margin: 10px 0;
+}
+.el-date-editor.el-input{
+  width: 100%;
+}
+.cell{
+  text-align: center;
+}
+.el-pagination{
+  padding: 20px 5px;
+}
+.success{
+  color: #00cc66;
+}
+.warning{
+  color: #ffbe0a;
+}
+.error{
+  color: #99A9BF;
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
+.shelf{
+  color:#00cc66 ;
+}
+.noshelf{
+  color: #ff2601;
+}
+.shelfs{
+  border: none;
+}
+.shelfs:hover{
+  border: none;
+  color: #1F2D3D;
+}
+.image{
+  width:70% ;
+}
+.fullImg {
+  width: 100%;
+}
+.imgLabel{
+  vertical-align: top;
+}
+.addbox{
+  padding: 10px;
+  /*background: #fbfbfb;*/
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+.addbox .item{
+  line-height: 30px;
+}
+.addbox .item span{
+  line-height: 18px;
+}
+.addbox h4{
+  margin: 5px 0px 10px 0px;
+  position: relative;
+  padding-left: 10px;
+}
+.addbox h4:after{
+  content: "";
+  display: inline-block;
+  width: 3px;
+  height: 15px;
+  position: absolute;
+  left: 0;
+  top: 1px;
+  background: #00b0e8;
+}
+.loadSize .el-upload{
+  width: 100%;
+}
+.el-dialog__title {
+  font-size: 18px;
+  color: #666;
+  font-family: '微软雅黑';
+  font-weight: normal;
+}
+.dialogAdd .el-dialog__footer {
+  padding: 10px 20px 15px;
+  text-align: center;
+  box-sizing: border-box;
+  margin-top: -30px;
+  margin-bottom: 30px;
+}
+.navBtn{
+  margin-bottom: 10px;
+}
+.navBtn .btnStyle{
+  height: 36px;
+}

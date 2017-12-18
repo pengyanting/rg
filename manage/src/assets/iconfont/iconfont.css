@@ -1,0 +1,51 @@
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1487668606840'); /* IE9*/
+  src: url('iconfont.eot?t=1487668606840#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1487668606840') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1487668606840') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1487668606840#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfonts {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-yonghujiaose:before { content: "\e654"; color: #c0ccda; }
+
+.icon-user:before{
+  content:"\e62f";
+  position: absolute;
+  top: 0;
+  left: 10px;
+  color: #B5BDC4;
+}
+.icon-manager:before{
+  content: "\E62F";
+  position: absolute;
+  top: 0;
+  left: 10px;
+  color: #B5BDC4;
+  margin-top: 12px;
+  margin-left: 6px;
+  font-size: 20px;
+}
+.icon-pass:before{
+  content:"\e66e";
+  position: absolute;
+  top: 0;
+  left: 10px;
+  color: #B5BDC4;
+}
+.icon-download:before{
+  content:'\e601';
+}
+.icon-reset:before{
+  content:'\e611';
+}
+.icon-index:before{content:"\e600";font-size: 24px;color: #20A0FF;}
+

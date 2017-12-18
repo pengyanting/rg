@@ -1,0 +1,98 @@
+[{
+  "label": "商户通",
+  "children": [
+    {
+      "label": "对象管理",
+      "children": [{
+        "label": "对象维护",
+        "link": "/sht/dxwh"
+      }]
+    },{
+      "label": "消息管理",
+      "children": [{
+        "label": "消息模板",
+        "link": "/sht/xxmb"
+      },{
+        "label": "消息发布",
+        "link": "/sht/xxfb"
+      },{
+        "label": "消息发布新版",
+        "link": "/sht/xxfbnew"
+      }]
+    },{
+      "label": "广告管理",
+      "children": [{
+        "label": "广告发布",
+        "link": "/sht/ggfb"
+      }]
+    },{
+      "label": "业务管理",
+      "children": [{
+        "label": "业务发布",
+        "link": "/sht/ywfb"
+      }]
+    }],
+  "authLevel": 1
+},
+{
+  "label": "收款宝",
+  "children": [{
+    "label": "对象管理",
+    "children": [{
+      "label": "对象维护",
+      "link": "/skb/dxwh"
+    }]
+  }, {
+    "label": "消息管理",
+    "children": [{
+      "label": "消息模板",
+      "link": "/skb/xxmb"
+    },{
+      "label": "消息发布",
+      "link": "/skb/xxfb"
+    },{
+      "label": "消息发布新版",
+      "link": "/skb/xxfbNew"
+    }]
+  },{
+    "label": "APP更新管理",
+    "children": [{
+      "label": "配置更新提示",
+      "link": "/skb/pzgxts"
+    }]
+  },{
+    "label": "广告管理",
+    "children": [{
+      "label": "广告发布",
+      "link": "/skb/ggfb"
+    }]
+  },{
+    "label": "业务管理",
+    "children": [{
+      "label": "公共业务发布",
+      "link": "/skb/ggywfb"
+    },{
+      "label": "定向业务发布",
+      "link": "/skb/dxywfb"
+    },{
+      "label": "定向业务发布新版",
+      "link": "/skb/dxywfbnew"
+    }]
+  },{
+    "label": "活动专区",
+    "children": [{
+      "label": "活动管理",
+      "link": "/skb/hdgl"
+    }]
+  },{
+    "label": "银行管理",
+    "children": [{
+      "label": "银行列表查询",
+      "link": "/skb/yhlbcx"
+    },{
+      "label": "银行卡审核",
+      "link": "/skb/yhksh"
+    }]
+  }],
+  "authLevel": 2
+}]

@@ -1,0 +1,251 @@
+<!--商户通对象维护-->
+<template>
+    <el-row>
+        <!--查询-->
+        <el-col :span="24"
+                class="toolbar">
+            <el-form :inline="true"
+                     :model="formInline"
+                     ref="formInline"
+                     class="demo-form-inline">
+                <el-form-item label="精确搜索："
+                              label-width="90px">
+                </el-form-item>
+                <el-form-item prop="title">
+                    <el-input v-model="formInline.title"
+                              placeholder="请输入一级目录名称"></el-input>
+                </el-form-item>
+                <el-form-item prop="title">
+                    <el-input v-model="formInline.content"
+                              placeholder="请输入二级目录名称"></el-input>
+                </el-form-item>
+                <el-form-item prop="course">
+                    <el-select v-model="formInline.course"
+                               clearable
+                               placeholder="请选择课程">
+                        <el-option v-for="item in courseList"
+                                   :label="item.title"
+                                   :value="item.id+'-'+item.title">
+                        </el-option>
+                    </el-select>
+                </el-form-item>
+            </el-form>
+        </el-col>
+        <!--按钮-->
+        <el-col :span="24">
+            <el-button-group class="navBtn">
+                <el-button type="primary"
+                           icon="search"
+                           @click="handleSearch">搜索</el-button>
+                <el-button type="primary"
+                           @click="handleReset"
+                           class="btnStyle"><i class="iconfonts icon-reset el-icon--left"></i>重置</el-button>
+                <el-button type="primary"
+                           @click="handleAdd"><i class="el-icon-plus el-icon--left"></i>新建目录</el-button>
+            </el-button-group>
+        </el-col>
+        <!--表格-->
+        <el-col :span="24">
+            <el-table :data="tableData"
+                      border
+                      stripe
+                      style="width: 100%"
+                      height="350">
+                <el-table-column fixed
+                                 prop="id"
+                                 label="目录ID"
+                                 width="100">
+                </el-table-column>
+                <el-table-column prop="title"
+                                 label="一级目录"
+                                 width="160">
+                </el-table-column>
+                <el-table-column prop="content"
+                                 label="二级目录"
+                                 width="160">
+                </el-table-column>
+                <el-table-column prop="username"
+                                 label="用户名"
+                                 width="160">
+                </el-table-column>
+                <el-table-column prop="coursetitle"
+                                 label="所属课程"
+                                 width="160">
+                </el-table-column>
+                  <el-table-column prop="videourl"
+                                 label="视频地址"
+                                 width="160">
+                </el-table-column>
+                <el-table-column prop="time"
+                                 label="创建时间"
+                                 width="160">
+                </el-table-column>
+                <el-table-column inline-template
+                                 :context="_self"
+                                 fixed="right"
+                                 label="操作"
+                                 width="150">
+                    <div>
+                        <el-button type="danger"
+                                   size="small"
+                                   @click.native="handleDelete($index, row)">删除</el-button>
+                    </div>
+                </el-table-column>
+            </el-table>
+        </el-col>
+        <!--分页-->
+        <el-col :span="24"
+                class="pagination">
+            <el-pagination @size-change="handleSizeChange"
+                           @current-change="handleCurrentChange"
+                           :current-page="1"
+                           :page-sizes="[10, 20, 30, 40]"
+                           :page-size="100"
+                           layout="total, sizes, prev, pager, next, jumper"
+                           :total="200">
+            </el-pagination>
+        </el-col>
+    </el-row>
+</template>
+<script>
+import axios from "axios"
+var qs = require('querystring');
+export default {
+    data() {
+        return {
+            tableData: [],
+            formInline: {
+                title: '',
+                content: '',
+                course:''
+            },
+            courseList: []
+        }
+    },
+    mounted: function () {
+        this.searchCourse();
+        this.handleSearch();
+    },
+    methods: {
+        searchCourse() {
+            var vm = this;
+            axios.post(this.$root._data.apiUrl +"manage/selectcourse.php",qs.stringify({
+               sql:"select * from courses"
+            })).then(function (res) {
+                    if (res.data.length > 0) {
+                        vm.courseList = res.data;
+                    }
+                }).catch(function (error) {
+                    console.log(error)
+                })
+        },
+        handleSearch() {
+            var vm = this;
+            var sql="select * from catalog where 1=1 "
+            if(vm.formInline.title){
+                sql+="and title like '%"+vm.formInline.title+"%' "
+            }
+            if(vm.formInline.content){
+                sql+="and content like '%"+vm.formInline.content+"%' "
+            }
+            if(vm.formInline.course){
+                sql+="and courseid ='"+vm.formInline.course.split('-')[0]+"' "
+            }
+            this.$store.dispatch('LOAD', true);
+            axios.post(this.$root._data.apiUrl + "manage/selectcatalog.php",qs.stringify({
+               sql:sql
+            })).then(function (res) {
+                    setTimeout(() => {
+                        vm.$store.dispatch('LOAD', false);
+                        if(res.data.length>0){
+                           vm.tableData = res.data;
+                        }else{
+                            vm.tableData='';
+                        }
+                    }, 1000);
+                }).catch(function (error) {
+                    vm.$message({
+                        message: '查询失败！',
+                        type: 'error'
+                    });
+                    console.log(error)
+                })
+        },
+        handleReset() {
+            this.$refs.formInline.resetFields();
+        },
+        handleAdd() {
+            this.$router.push({ path: '/course/addCatalog.php' })
+        },
+        handleDelete(index, row) {
+            var vm = this;
+            this.$confirm('确定删除此条数据吗?', '提示', {
+                confirmButtonText: '确定',
+                cancelButtonText: '取消',
+                type: 'warning'
+            }).then(() => {
+                axios.post(this.$root._data.apiUrl + "del.php", qs.stringify({
+                    id: row.id,
+                    deltype: 'catalog'
+                })).then(function (res) {
+                    var data = res.data;
+                    if (data == 1) {
+                        vm.handleSearch();
+                        vm.$message({
+                            type: 'success',
+                            message: '删除成功'
+                        });
+                    } else {
+                        vm.$message({
+                            type: 'error',
+                            message: '删除失败'
+                        });
+                    }
+                }).catch(function (error) {
+                    console.log(error)
+                })
+
+            }).catch(() => {
+                this.$message({
+                    type: 'info',
+                    message: '已取消删除'
+                });
+            });
+        },
+        handleSizeChange(val) {
+            console.log(`每页 ${val} 条`);
+        },
+        handleCurrentChange(val) {
+            console.log(`当前页: ${val}`);
+        },
+    }
+}
+</script>
+<style lang="sass" rel="stylesheet/scss">
+    .el-dialog__header{
+        border-top: 4px solid #20A0FF;
+        padding: 15px!important;
+        background: #FAFAFC;
+        border-bottom: 1px solid #f2f2f2;
+    }
+    .el-button--text{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .auditdialog {
+        .el-dialog__body{
+            padding: 20px 20px 0 20px;
+        }
+        .auditbox{
+            padding: 20px 20px 0 20px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            .item{
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .el-loading-mask {
+        background: rgba(0,0,0,0.7)!important;
+    }
+</style>

@@ -1,0 +1,15 @@
+{
+  "extends": "enough",
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "no-trailing-spaces": 0,
+    "no-console": 2,
+    "no-unused-vars": 0,
+    "no-useless-escape": 0,
+    "linebreak-style": 0
+  }
+}
