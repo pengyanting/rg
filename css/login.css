@@ -1,0 +1,145 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: url(../img/login_page_bg.png) no-repeat;
+}
+.title{
+  width: 100%;
+  font-size:30px;
+  text-align: center;
+  font-family: "微软雅黑"; 
+  margin-top: 100px;
+}
+.login {
+  width: 262px;
+  padding: 50px 40px 10px 40px;
+  background-size: cover;
+  height: 262px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 5px;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+}
+
+.login .item {
+  margin-bottom: 20px;
+  position: relative;
+  clear: both;
+  zoom: 1;
+}
+
+.login .item label {
+  text-align: center;
+  display: block;
+  font-size: 21px;
+  color: #333;
+  font-family: "微软雅黑";
+}
+
+.login .item a {
+  font-size: 12px;
+  text-decoration: none;
+  color: orange;
+  text-align: center;
+  float: right;
+  transition: color .2s ease;
+}
+
+.login .item a:hover {
+  color: #FF6C00;
+}
+
+.login .item:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.login .item-col {
+  float: left;
+  display: inline;
+}
+
+.text {
+  width: 240px;
+  padding: 0 10px;
+  height: 35px;
+  border: 1px solid #b3b3b3;
+  border-radius: 3px;
+}
+
+.code_text {
+  width: 128px;
+}
+
+.valid_img {
+  width: 100px;
+  height: 35px;
+  margin-left: 8px;
+  border: 1px solid #b3b3b3;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.login_btn {
+  width: 260px;
+  height: 35px;
+  background: #06ce98;
+  border-radius: 3px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background .3s ease;
+}
+
+.login_btn:hover {
+  background: #12AD83;
+}
+
+.submitting {
+  background-color: #f2f2f2 !important;
+  color: #4c4c4c !important;
+}
+
+.re_error {
+  color: #f42c2c;
+  margin-top: -20px;
+  height: 20px;
+}
+
+.valid-error-message {
+  position: absolute;
+  top: 47px;
+  left: 0;
+  color: #f42c2c;
+  font-style: normal;
+}
+
+.panel_nav_btn {
+  text-align: center;
+}
+
+.panel_nav_btn .tab_btn {
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  margin: 0 30px;
+  position: relative;
+  background: #fff;
+}
+
+.panel_nav_btn .active {
+  background: #e6e6e6;
+}
+
+input {
+  outline: none;
+}
